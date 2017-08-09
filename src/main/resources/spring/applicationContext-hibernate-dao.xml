@@ -40,21 +40,21 @@
 
     <!-- 配合<tx:advice>和<aop:advisor>完成了事务切面的定义 -->
     <!-- 使用强大的切点表达式是语言轻松定义目标方法 -->
-    <aop:config proxy-target-class="true">
-        <!-- 通过aop定义事务增强切面 -->
+    <!--<aop:config proxy-target-class="true">
+        &lt;!&ndash; 通过aop定义事务增强切面 &ndash;&gt;
         <aop:pointcut id="txPointcut" expression=" execution(* top.haw358.*.service.*(..))"/>
-        <!-- 引用事务增强 -->
+        &lt;!&ndash; 引用事务增强 &ndash;&gt;
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
     </aop:config>
-    <!-- 事务增强 -->
+    &lt;!&ndash; 事务增强 &ndash;&gt;
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <!-- 事务属性定义 -->
+        &lt;!&ndash; 事务属性定义 &ndash;&gt;
         <tx:attributes>
             <tx:method name="add*" propagation="REQUIRED" />
             <tx:method name="get*" propagation="REQUIRED" />
             <tx:method name="*" read-only="true" />
         </tx:attributes>
-    </tx:advice>
+    </tx:advice>-->
 
     <!-- 注解支持 @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
